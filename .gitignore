@@ -1,24 +1,45 @@
-# Windows
-Thumbs.db
-Desktop.ini
-
-# macOS
+# Unity3D .gitignore file.
+#        Store this file at the root of your local repository.
 .DS_Store
-
-# Code Editors
-.idea
-.vscode
-*.csproj
+Library
+Temp
+*.pidb
 *.sln
-*.swp
-*.vcxproj.user
+*.csproj
+*.userprefs
+*.unityproj
+Thumbs.db
+Thumbs.db.meta
+BUILDS
+.tryScene.scene
+resolution.conf
+SavesDir/
+Tools/Steam/ContentBuilder/builder/appcache/
+Tools/Steam/ContentBuilder/builder/.crash
+Tools/Steam/ContentBuilder/builder/dumps/
+Tools/Steam/ContentBuilder/builder/logs/
+Tools/Steam/ContentBuilder/output/
+Tools/Steam/ContentBuilder/uerdata/
+Assets/StreamingAssets/resolution.conf.meta
 
-# Unity
-/Library
-/Logs
-/Temp
+poolerstats.txt
+Assets/StreamingAssets/audioSettings.conf
+Assets/StreamingAssets/audioSettings.conf.meta
+Assets/StreamingAssets/serializedAnimators.*
+.vs/
+obj/
 
-# Visual Studio
-/Extras/**/.vs
-/Extras/**/x64
-/Extras/**/Win32
+lastSession_depth\.csv
+
+lastSession_freq\.csv
+
+lastSession_stats\.txt
+
+Assets/StreamingAssets/SteamCloud/Leaderboards/02_ExtraOspedaliero
+Assets/StreamingAssets/SteamCloud/
+/UnityTouchTop/images
+/UnityTouchTop/Contents
+/UnityTouchTop/Config/test
+/UnityTouchTop/Config
+log_exceptions.txt
+log.txt

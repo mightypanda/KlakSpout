@@ -47,6 +47,10 @@ namespace Klak.Spout
             }
 
             // Shared texture lazy initialization
+            //TextureFormat format = TextureFormat.ARGB32; // TABULA: original KlakSpout, DX11 only
+            TextureFormat format = TextureFormat.BGRA32; // TABULA: FaçadeSignage compatibilty, DX9/DX11
+
+
             if (_sharedTexture == null)
             {
                 var ptr = PluginEntry.GetTexturePointer(_plugin);
@@ -55,7 +59,7 @@ namespace Klak.Spout
                     _sharedTexture = Texture2D.CreateExternalTexture(
                         PluginEntry.GetTextureWidth(_plugin),
                         PluginEntry.GetTextureHeight(_plugin),
-                        TextureFormat.ARGB32, false, false, ptr
+                        format, false, false, ptr
                     );
                     _sharedTexture.hideFlags = HideFlags.DontSave;
                 }
@@ -79,7 +83,7 @@ namespace Klak.Spout
                 // render texture as a middleman, blit the source to it, then
                 // copy it to the shared texture using the CopyTexture API.
                 var tempRT = RenderTexture.GetTemporary
-                    (_sharedTexture.width, _sharedTexture.height);
+                    (_sharedTexture.width, _sharedTexture.height, 0, RenderTextureFormat.BGRA32);   // tabula: using BGRA32 also for temp
                 Graphics.Blit(source, tempRT, _blitMaterial, 0);
                 Graphics.CopyTexture(tempRT, _sharedTexture);
                 RenderTexture.ReleaseTemporary(tempRT);

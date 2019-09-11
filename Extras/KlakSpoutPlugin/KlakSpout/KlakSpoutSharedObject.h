@@ -124,7 +124,8 @@ namespace klakspout
             }
 
             // Currently we only support RGBA32.
-            const auto format = DXGI_FORMAT_R8G8B8A8_UNORM;
+            //const auto format = DXGI_FORMAT_R8G8B8A8_UNORM;	//DX11 only
+			const auto format = DXGI_FORMAT_B8G8R8A8_UNORM;	//DX9/DX11 
 
             // Create a shared texture.
             ID3D11Texture2D* texture;
